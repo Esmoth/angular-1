@@ -1,0 +1,25 @@
+Comandos del Ciclo de Vida del Proyecto:
+    ng new nomnbre-app => crear nueva aplicación.
+    ng serve (s) => servir la aplicación.
+    ng serve --open (s -o) => Levanta la app y la abre en el navegador.
+    ng build (b) => Compila la app y genera la carpeta /disy para subir a producción.
+
+Comandos para Generar Elementos
+-Componentes (Vistas y bloques de la UI)
+    ng generate component carpeta/nombre-componente (g c) => Crea el componente con sus 4 archivos en la ruta señalada.
+    ng g c components/alerta --skip-tests => Crea el componente evitando el archivo de pruebas.
+    ng g c components/alerta -it -is => Incluye el html y css dentro del .ts
+-Lógica, Datos y Navegación
+    ng g s services/cliente => Para conectar a una Api
+    ng g g guards/auth => Para proteger rutas; por ejemplo, que nadie entre a /clientes sin loguearse.
+    ng g interceptor interceptors/token => Para adjuntar automáticamente tokens JWT a todas tus peticiones HTTP.
+    ng g m modulos/admin --routing => Para separar las rutas por secciones.
+-Transformación y Utilidades
+    ng g p pipes/moneda-chilena => Para transformar texto en el HTML.
+    ng g d directives/solo-numeros => Para modificar el comportamiento de elementos nativos, como un input.
+    ng g interface models/cliente => Define la estructura estricta que tiene un objeto Cliente de TypeScript.
+
+Otros
+    --dry-run (-d) => Muestra en la consola los archivos que crearía sin realizar los cambios. EJ: ng g c components/test -d
+    --force (-f) => Si ya existe un componente con ese nombre lo sobreescribirá.
+

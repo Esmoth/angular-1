@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Te amo dianis 💕🌻!</h1>
+<h3>Cuestionario del amor :D</h3>
+@for (pregunta of preguntas(); track $index; let iPregunta = $index) {
+    <p>{{pregunta.pregunta}}</p>
+    <ul>
+    @for (alternativa of pregunta.alternativas; track $index; let iAlternativa = $index) {
+        <li>
+            <input type="radio" name="p{{iPregunta}}"
+                id="alt{{iPregunta}}{{iAlternativa}}" 
+                    [value]=iAlternativa
+                    [(ngModel)]="pregunta.respuestaSeleccionada"> 
+            <label for="alt{{iPregunta}}{{iAlternativa}}" >{{alternativa}}</label>
+        </li>
+    }
+    </ul>
+}
+<button (click)="ProcesarRespuestas(); mostrarResultado = true">Enviar respuestas</button>
+@if(mostrarResultado){
+<div class="resultado-box">
+    <p>{{mensajeFinal()}}</p>
+</div>
+}

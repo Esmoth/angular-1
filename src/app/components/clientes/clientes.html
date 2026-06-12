@@ -1,0 +1,10 @@
+<p>Listado de clientes</p>
+<ul>
+    @for (cliente of clientes; track $index) {
+        <li>{{cliente}} <button (click)="removeCliente($index)">Eliminar</button></li>
+    } @empty {
+        <li>No hay clientes aún</li>
+    }
+</ul>
+<input (keyup.enter)="addCliente()" [(ngModel)]="nuevoCliente" type="text" placeholder="Nuevo Cliente"> 
+<button (click)="addCliente()">Añadir</button>
